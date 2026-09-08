@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Banka Match</title>
+<meta name="theme-color" content="#F6F0E6">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="../assets/retinol.png">
+<link rel="apple-touch-icon" href="../assets/retinol.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="loading">
+<div class="phone">
+
+  <section class="screen" id="picker-a"></section>
+  <section class="screen" id="picker-b"></section>
+  <section class="screen" id="verdict"></section>
+  <section class="screen lab" id="prod-a"></section>
+  <section class="screen lab" id="prod-b"></section>
+  <section class="screen" id="history"></section>
+  <section class="screen" id="paste-a"></section>
+  <section class="screen" id="paste-b"></section>
+  <section class="screen" id="lookup-a"></section>
+  <section class="screen" id="lookup-b"></section>
+  <section class="screen" id="back-a"></section>
+  <section class="screen" id="back-b"></section>
+
+  <section class="screen" id="photo">
+    <a class="back" href="#home" aria-label="Назад">‹</a>
+    <h1 class="sm">Проверка по фото</h1>
+    <p class="sub">Распознавание этикеток мы сейчас подключаем. Средство всё равно можно проверить: выберите его из базы или вставьте состав, вердикт посчитают те же правила.</p>
+    <div class="notecard">
+      <div class="flabel">как это будет работать</div>
+      <p>Фото уйдёт на распознавание во внешний сервис и у нас не сохранится. Гео-метки вычищаются из снимка до отправки. В кадре лучше держать только банки.</p>
+    </div>
+    <div class="grow"></div>
+    <a class="btn" href="#home">Выбрать из базы</a>
+    <a class="btn ghost" href="#paste-a">Вставить состав</a>
+  </section>
+
+  <section class="screen" id="pyramid">
+    <a class="back" href="#verdict" aria-label="Назад">‹</a>
+    <h1 class="sm">Пирамида доказательности</h1>
+    <p class="sub">Не всё, что советуют, одинаково доказано. Мы рассказываем, на что опирается вывод.</p>
+    <div style="margin-top:18px">
+      <div class="tier"><span class="lvl">4 / 4</span><div><b>Клинические рекомендации</b>
+        <p>Им можно доверять больше всего.</p></div></div>
+      <div class="tier"><span class="lvl">3 / 4</span><div><b>Метаанализы и обзоры</b>
+        <p>Много исследований, собранных вместе.</p></div></div>
+      <div class="tier"><span class="lvl">2 / 4</span><div><b>Отдельные исследования</b>
+        <p>Данные есть, выводы не окончательные.</p></div></div>
+      <div class="tier"><span class="lvl">1 / 4</span><div><b>Мнение экспертов</b>
+        <p>Опыт и логика, но не доказательная база.</p></div></div>
+    </div>
+    <div class="grow"></div>
+    <a class="btn" href="#verdict">Понятно</a>
+  </section>
+
+  <!-- Стартовый экран последним: так работает правило .screen:target ~ #home -->
+  <section class="screen" id="home">
+    <h1>Сочетаются ли ваши средства?</h1>
+    <p class="sub">Выберите два средства: скажем, можно ли их вместе, и насколько это доказано.</p>
+    <div class="slots s2" id="home-slots"></div>
+    <div class="grow"></div>
+    <p class="hint" id="home-hint">Выберите два средства, чтобы проверить</p>
+    <span class="btn off" id="home-cta">Проверить пару</span>
+    <a class="btn ghost" id="home-example" href="#verdict">Попробовать на примере</a>
+    <div class="homerow">
+      <a href="#photo" id="home-photo">проверить по фото</a>
+      <a href="#history" id="home-history">мои проверки</a>
+    </div>
+  </section>
+
+</div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
